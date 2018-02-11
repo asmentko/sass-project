@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   skip_before_action :authenticate_tenant!, :only => [ :index ]
 
+  # als modified for milia see Section 10, Lecture 247, video 5
   def index
     if current_user
       if session[:tenant_id]
