@@ -3,6 +3,9 @@ Rails.application.configure do
   # devise says to define default url
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+  # als added following line to get rid of 10.0.2.2 errors in terminal
+  config.web_console.whitelisted_ips = '10.0.2.2'
+
   # set up for email sending even in dev mode
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
@@ -13,7 +16,7 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :port => "587",
     :authentication => :plain,
-    :user_name => "asmentko@mac.com",
+    :user_name => "blah@example.com",
     :password => ENV["SMTP_ENTRY"],
     :enable_starttls_auto => true
   }
