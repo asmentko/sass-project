@@ -2,6 +2,9 @@ class Tenant < ApplicationRecord
 
    acts_as_universal_and_determines_tenant
   has_many :members, dependent: :destroy
+  # also careful with this next line...
+  # if tenant closes their account, this will destroy all projects
+  has_many :projects, dependent: :destroy
   # als added name validation to ensure that user fills in a unique organization
   validates_uniqueness_of :name
   validates_presence_of :name
