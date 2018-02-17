@@ -6,6 +6,11 @@ class Tenant < ApplicationRecord
   # if tenant closes their account, this will destroy all projects
   has_many :projects, dependent: :destroy
   # als added name validation to ensure that user fills in a unique organization
+
+  def can_create_projects?
+    (plan == 'free' && projects.count < 1) || (plan =='premium')
+  end
+
   validates_uniqueness_of :name
   validates_presence_of :name
 
