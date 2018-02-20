@@ -24,7 +24,7 @@ Rails.application.configure do
   config.eager_load = true
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'sass-project-three-asmentko.herokuapp.com', :protocal => 'https' }
+  config.action_mailer.default_url_options = { :host => 'sass-project-asmentko.herokuapp.com', :protocal => 'https' }
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
