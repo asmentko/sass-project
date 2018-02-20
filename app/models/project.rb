@@ -1,7 +1,9 @@
 class Project < ApplicationRecord
   belongs_to :tenant
   validates_uniqueness_of :title
+  has_many :artifacts, dependent: :destroy
   validate :free_plan_can_only_have_one_project
+  # mount_uploader :file, FileUploader
 
   def free_plan_can_only_have_one_project
     if self.new_record? && (tenant.projects.count > 0) && (tenant.plan == 'free')

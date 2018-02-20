@@ -31,4 +31,9 @@ module ApplicationHelper
   def tenant_name(tenant_id)
     Tenant.find(tenant_id).name
   end
+
+  # als along with the line in _lists.html.erb, this method might need Carrierwave adaptation
+  def s3_link(tenant_id, artifact_file)
+    link_to artifact_file, "#{artifact_file}", class: "main-link", target: 'new'
+  end
 end
