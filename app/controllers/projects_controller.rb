@@ -66,7 +66,7 @@ private
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def project_params
-    params.require(:project).permit(:title, :details, :tenant_id)
+    params.require(:project).permit(:title, :details, :expected_completion_date, :tenant_id)
   end
 
   def set_tenant
